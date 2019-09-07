@@ -70,6 +70,7 @@ gulp.task('scss:grid', function compileScss() {
     .pipe(gulp.dest('./assets/css/bootstrap-grid.css'))
 });
 
+
 // Compile SCSS(SASS) files
 gulp.task('scss', gulp.series('bootstrap:scss', function compileScss() {
   return gulp.src(['./assets/scss/*.scss'])
