@@ -1,0 +1,23 @@
+main {
+  margin-bottom: 100px;
+}
+
+.custom-cols {
+  & > .col-md-4 {
+    display: flex;
+
+    & > [class^="bg"] {
+      display: flex;
+      flex-direction: column;
+
+      & > .field-image {
+        flex: 1;
+      }
+
+      & > h4 {
+        margin-top: auto;
+        background-color: red;
+      }
+    }
+  }
+}

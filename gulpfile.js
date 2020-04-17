@@ -1,6 +1,6 @@
 "use strict";
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   sass = require('gulp-sass'),
   del = require('del'),
   uglify = require('gulp-uglify'),
@@ -97,7 +97,7 @@ gulp.task('css:minify', gulp.series('scss', function cssMinify() {
 // Minify Js
 gulp.task('js:minify', function () {
   return gulp.src([
-    './assets/js/app.js'
+    './assets/js/index.js'
   ])
     .pipe(uglify())
     .pipe(rename({
@@ -124,11 +124,11 @@ gulp.task('dev', function browserDev(done) {
       baseDir: "./"
     }
   });
-  gulp.watch(['assets/scss/*.scss','assets/scss/**/*.scss','!assets/scss/bootstrap/**'], gulp.series('css:minify', function cssBrowserReload (done) {
+  gulp.watch(['assets/scss/**/*.scss','!assets/scss/bootstrap/**'], gulp.series('css:minify', function cssBrowserReload (done) {
     browserSync.reload();
     done(); //Async callback for completion.
   }));
-  gulp.watch('assets/js/app.js', gulp.series('js:minify', function jsBrowserReload (done) {
+  gulp.watch('assets/js/**/.js', gulp.series('js:minify', function jsBrowserReload (done) {
     browserSync.reload();
     done();
   }));

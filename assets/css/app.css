@@ -11055,4 +11055,26 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+main {
+  margin-bottom: 100px;
+}
+
+.custom-cols > .col-md-4 {
+  display: flex;
+}
+
+.custom-cols > .col-md-4 > [class^="bg"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-cols > .col-md-4 > [class^="bg"] > .field-image {
+  flex: 1;
+}
+
+.custom-cols > .col-md-4 > [class^="bg"] > h4 {
+  margin-top: auto;
+  background-color: red;
+}
+
 /*# sourceMappingURL=app.css.map */
