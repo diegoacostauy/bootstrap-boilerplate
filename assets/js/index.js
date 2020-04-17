@@ -1,3 +1,5 @@
-const hello = 'hello';
+import Header from './Components/Header';
 
-console.log(hello);
+const header = new Header();
+header.message();
+console.log('message');

@@ -3,6 +3,10 @@
 const gulp = require('gulp'),
   sass = require('gulp-sass'),
   del = require('del'),
+  browserify = require('browserify'),
+  babelify = require('babelify'),
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer'),
   uglify = require('gulp-uglify'),
   cleanCSS = require('gulp-clean-css'),
   rename = require("gulp-rename"),
@@ -13,8 +17,9 @@ const gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 // Clean task
-gulp.task('clean', function() {
-  return del(['dist', 'assets/css/app.css']);
+gulp.task('clean', function(cb) {
+  del(['dist', 'assets/css/app.css']);
+  cb();
 });
 
 // Copy third party libraries from node_modules into /vendor
@@ -96,15 +101,28 @@ gulp.task('css:minify', gulp.series('scss', function cssMinify() {
 
 // Minify Js
 gulp.task('js:minify', function () {
-  return gulp.src([
-    './assets/js/index.js'
-  ])
-    .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./dist/assets/js'))
-    .pipe(browserSync.stream());
+  // return gulp.src([
+  //   './assets/js/index.js'
+  // ])
+  //   .pipe(uglify())
+  //   .pipe(rename({
+  //     suffix: '.min'
+  //   }))
+  //   .pipe(gulp.dest('./dist/assets/js'))
+  //   .pipe(browserSync.stream());
+  return browserify({
+    entries: ['./assets/js/index.js']
+  })
+  .transform(babelify,{presets: ['@babel/preset-env']})
+  .bundle()
+  .pipe(source('index.js'))
+  .pipe(buffer())
+  .pipe(rename('app.min.js'))
+  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(uglify())
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('./dist/assets/js'))
+  .pipe(browserSync.stream())
 });
 
 // Replace HTML block for Js and Css file upon build and copy to /dist
@@ -124,11 +142,11 @@ gulp.task('dev', function browserDev(done) {
       baseDir: "./"
     }
   });
-  gulp.watch(['assets/scss/**/*.scss','!assets/scss/bootstrap/**'], gulp.series('css:minify', function cssBrowserReload (done) {
+  gulp.watch(['./assets/scss/**/*.scss','!assets/scss/bootstrap/**'], gulp.series('css:minify', function cssBrowserReload (done) {
     browserSync.reload();
     done(); //Async callback for completion.
   }));
-  gulp.watch('assets/js/**/.js', gulp.series('js:minify', function jsBrowserReload (done) {
+  gulp.watch('./assets/js/**/.js', gulp.series('js:minify', function jsBrowserReload (done) {
     browserSync.reload();
     done();
   }));

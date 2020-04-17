@@ -11055,6 +11055,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #f8f9fa;
+}
+
 main {
   margin-bottom: 100px;
 }

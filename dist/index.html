@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Diego Acosta">
+    <meta name="theme-color" content="#2a2a2a">
     <!-- <link rel="icon" href="favicon.ico"> -->
 
     <title>Bootstrap Stater Boilerplate</title>
@@ -17,83 +18,93 @@
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search </button>
-        </form>
-    </div>
-</nav>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" role="navigation" aria-label="Bootstrap Boilerplate">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0" role="search" aria-label="Bootstrap Boilerplate">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i> Search </button>
+          </form>
+      </div>
+  </nav>
+</header>
 
 <main role="main" class="container">
-    <div class="jumbotron text-center">
-        <img src="assets/img/logo.png"/>
-        <h1>Bootstrap 4 Starter Template</h1>
-        <p class="lead">This example is a quick bootstrap starter template.</p>
-        <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.1/getting-started/introduction/" role="button" target="_blank">View Bootstrap 4.1 Docs &raquo;</a>
-    </div>
+  <div class="jumbotron text-center">
+    <img src="assets/img/logo.png" alt="logo"/>
+    <h1>Bootstrap 4 Starter Template</h1>
+    <p class="lead">This example is a quick bootstrap starter template.</p>
+      <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/4.1/getting-started/introduction/" role="button" target="_blank">View Bootstrap 4.1 Docs &raquo;</a>
+  </div>
 
-    <div class="row custom-cols">
-      <div class="col-md-4">
-        <div class="bg-primary">
-          <div class="field-image">
-            <img src="https://via.placeholder.com/150" alt="">
-          </div>
-          <h4>
-            Hello World, Hello World hello world
-          </h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem in quia corporis. Reiciendis
-            odio, veniam quia, quaerat perferendis ullam dolore provident sed commodi enim saepe, adipisci molestias cum amet!
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bg-light">
-          <div class="field-image">
-            <img src="https://via.placeholder.com/350x200" alt="">
-          </div>
-          <h4>
-            Hello World, Hello World hello world
-            Hello World, Hello World hello world
-          </h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim eum dolorum quasi impedit voluptates. Assumenda aut
-            repellendus provident veritatis illum, tempora voluptas porro libero ad asperiores nostrum eligendi odit alias.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="bg-secondary">
+  <div class="row custom-cols">
+    <div class="col-md-4">
+      <article class="bg-primary">
         <div class="field-image">
-          <img src="https://via.placeholder.com/350x250" alt="">
+          <img src="https://via.placeholder.com/380x250" alt="">
         </div>
-        <h4>
+        <h2 class="h4">
           Hello World, Hello World hello world
-        </h4>
+        </h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem in quia corporis. Reiciendis
+          odio, veniam quia, quaerat perferendis ullam dolore provident sed commodi enim saepe, adipisci molestias cum amet!
+        </p>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="bg-light">
+        <div class="field-image">
+          <img src="https://via.placeholder.com/380x250" alt="">
+        </div>
+        <h2 class="h4">
+          Hello World, Hello World hello world
+          Hello World, Hello World hello world
+        </h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim eum dolorum quasi impedit voluptates. Assumenda aut
+          repellendus provident veritatis illum, tempora voluptas porro libero ad asperiores nostrum eligendi odit alias.
+        </p>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="bg-secondary">
+        <div class="field-image">
+          <img src="https://via.placeholder.com/380x250" alt="">
+        </div>
+        <h2 class="h4">
+          Hello World, Hello World hello world
+        </h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque velit, quos earum, explicabo laborum officia voluptatibus nihil nam asperiores dolor saepe cum impedit neque adipisci sunt harum distinctio. Maxime, labore.
         </p>
-        </div>
-      </div>
+      </article>
     </div>
+  </div>
 </main>
+
+<footer role="contentinfo">
+  <div class="py-5 bg-light">
+    <p class="text-center text-muted mb-0 small">
+      Bootstrap Boilerplate 2020.
+    </p>
+  </div>
+</footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

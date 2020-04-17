@@ -9,7 +9,11 @@
   "author": "Diego Acosta",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
+    "browserify": "^16.5.1",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
@@ -20,7 +24,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.1",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -28,4 +34,5 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7"
   }
+
 }
