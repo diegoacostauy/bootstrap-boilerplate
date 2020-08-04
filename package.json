@@ -19,7 +19,9 @@
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.2.2",
     "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
@@ -34,5 +36,4 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7"
   }
-
 }
